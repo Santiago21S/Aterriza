@@ -13,8 +13,8 @@ Guía web para estudiantes internacionales que llegan a España. Reúne trámite
 **1. Clona el repositorio**
 
 ```bash
-git clone https://github.com/TU-USUARIO/TU-REPOSITORIO.git
-cd TU-REPOSITORIO
+git clone https://github.com/Santiago21S/Aterriza.git
+cd Aterriza
 ```
 
 **2. Crea el entorno virtual e instala el backend**
