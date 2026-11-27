@@ -1,0 +1,17 @@
+{
+  "name": "aterriza-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Aterriza: guía paso a paso para estudiantes internacionales en España",
+  "engines": {
+    "node": ">=20.12"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}

@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Aterriza · Tu guía para estudiar en España</title>
+    <meta
+      name="description"
+      content="Guías paso a paso para estudiantes internacionales: empadronamiento, NIE, banco, salud, vivienda, cocina y vida diaria en España."
+    />
+    <meta name="theme-color" content="#f6f7f4" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A7%AD%3C/text%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Saltar al contenido</a>
+
+    <div class="page">
+      <header class="site-header">
+        <a class="brand" href="#/">
+          <span class="brand-mark" aria-hidden="true">🧭</span>
+          <span class="brand-name">Aterriza</span>
+        </a>
+        <span class="country-badge">🇪🇸 España</span>
+      </header>
+
+      <main id="main">
+        <section id="home-view" aria-labelledby="home-title">
+          <div class="hero">
+            <p class="eyebrow">Guía para estudiantes internacionales</p>
+            <h1 id="home-title">Tu nueva vida,<br /><span>paso a paso.</span></h1>
+            <p class="lede">
+              Todo lo que necesitas para instalarte: papeleo, casa, dinero, salud
+              y día a día. Sin registro y sin complicaciones.
+            </p>
+
+            <div class="search">
+              <span class="search-icon" aria-hidden="true">🔍</span>
+              <label class="sr-only" for="search">Buscar una guía</label>
+              <input
+                id="search"
+                type="search"
+                placeholder="Busca: banco, empadronamiento, lavadora…"
+                autocomplete="off"
+              />
+              <button
+                id="clear-search"
+                class="clear-search"
+                type="button"
+                aria-label="Borrar búsqueda"
+                hidden
+              >
+                ✕
+              </button>
+            </div>
+
+            <p class="hero-meta" id="hero-stats"></p>
+          </div>
+
+          <nav
+            id="categories"
+            class="chips"
+            aria-label="Filtrar las guías por categoría"
+          ></nav>
+
+          <section class="progress-card" aria-labelledby="progress-title">
+            <div class="progress-copy">
+              <h2 id="progress-title">Tu progreso</h2>
+              <p id="progress-text">Todavía no has marcado ningún paso.</p>
+            </div>
+            <button
+              id="reset-progress"
+              class="link-button"
+              type="button"
+              hidden
+            >
+              Reiniciar
+            </button>
+            <div
+              class="progress-track"
+              id="progress-track"
+              role="progressbar"
+              aria-labelledby="progress-title"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              aria-valuenow="0"
+            >
+              <span id="progress-bar"></span>
+            </div>
+          </section>
+
+          <div class="section-head">
+            <h2 id="list-title">Todas las guías</h2>
+            <span id="result-count" class="result-count"></span>
+          </div>
+
+          <div id="guides-grid" class="guides-grid"></div>
+
+          <div id="no-results" class="empty" hidden>
+            <p>No encontramos ninguna guía con esos filtros.</p>
+            <button id="clear-filters" class="button" type="button">
+              Ver todas las guías
+            </button>
+          </div>
+
+          <section class="how" aria-labelledby="how-title">
+            <h2 id="how-title">Así de fácil</h2>
+            <ol>
+              <li>
+                <strong>Elige una guía</strong>
+                <span>Empieza por tus primeros 7 días o busca lo que necesites.</span>
+              </li>
+              <li>
+                <strong>Sigue los pasos</strong>
+                <span>Cada paso te dice qué hacer y qué necesitas.</span>
+              </li>
+              <li>
+                <strong>Marca tu progreso</strong>
+                <span>Se guarda en tu navegador. Sin cuentas ni contraseñas.</span>
+              </li>
+            </ol>
+          </section>
+        </section>
+
+        <section id="guide-view" hidden aria-labelledby="detail-title">
+          <a class="back-link" href="#/">← Todas las guías</a>
+
+          <article class="guide-detail">
+            <header class="detail-header">
+              <span id="detail-emoji" class="detail-emoji" aria-hidden="true"></span>
+              <p id="detail-category" class="eyebrow"></p>
+              <h1 id="detail-title"></h1>
+              <p id="detail-summary" class="lede"></p>
+
+              <div class="detail-progress">
+                <div class="detail-progress-top">
+                  <span id="detail-progress-text"></span>
+                  <button
+                    id="reset-guide"
+                    class="link-button"
+                    type="button"
+                    hidden
+                  >
+                    Reiniciar esta guía
+                  </button>
+                </div>
+                <div
+                  class="progress-track"
+                  id="detail-track"
+                  role="progressbar"
+                  aria-label="Progreso de esta guía"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuenow="0"
+                >
+                  <span id="detail-progress-bar"></span>
+                </div>
+              </div>
+            </header>
+
+            <ol id="steps" class="steps"></ol>
+
+            <a
+              id="official-link"
+              class="button button-outline"
+              target="_blank"
+              rel="noopener noreferrer"
+              hidden
+            ></a>
+
+            <div class="detail-footer">
+              <a class="button" href="#/">← Volver a todas las guías</a>
+            </div>
+          </article>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p><strong>Emergencias: 112</strong> · Contenido orientativo</p>
+        <p>
+          Los requisitos cambian según tu visado, tu país y tu comunidad autónoma:
+          confirma siempre la información en las fuentes oficiales.
+        </p>
+        <p>
+          Tu progreso se guarda solo en este navegador. No guardamos documentos ni
+          datos personales.
+        </p>
+      </footer>
+    </div>
+
+    <template id="guide-card-template">
+      <a class="guide-card" href="#">
+        <span class="card-top">
+          <span class="card-emoji" aria-hidden="true"></span>
+          <span class="card-badge">Empieza aquí</span>
+        </span>
+        <span class="card-category"></span>
+        <span class="card-title"></span>
+        <span class="card-summary"></span>
+        <span class="card-meta">
+          <span class="card-steps"></span>
+          <span class="card-done"></span>
+        </span>
+      </a>
+    </template>
+
+    <template id="step-template">
+      <li class="step">
+        <label class="step-label">
+          <input class="step-check" type="checkbox" />
+          <span class="step-body">
+            <span class="step-num"></span>
+            <span class="step-title"></span>
+            <span class="step-text"></span>
+            <span class="step-tip" hidden></span>
+          </span>
+        </label>
+      </li>
+    </template>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
